@@ -1,0 +1,1 @@
+C:\xampp\htdocs\TUBES-SBD-K3-METMUSEUM\TUBES-SBD-WEBSITE\database\migrations\2026_05_07_000057_create_cart_items_table.php:  (no local column def)

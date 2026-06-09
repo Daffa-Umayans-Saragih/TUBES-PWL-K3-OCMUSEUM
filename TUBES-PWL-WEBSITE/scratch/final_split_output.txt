@@ -1,0 +1,60 @@
+Daffa
+Fitya
+Umi
+Finsus
+Ghibran
+Daffa
+├── app/Http/Controllers/Admin/
+├── database/seeders/
+├── resources/views/admin/artworks/
+└── resources/views/admin/orders/
+
+Fitya
+├── resources/css/
+├── resources/views/ordinary/art/
+└── resources/views/ordinary/plan-your-visit/
+
+Umi
+├── database/migrations/
+├── database/factories/
+├── resources/views/admin/dashboard/
+├── resources/views/admin/tickets/
+├── resources/views/admin/payment/
+├── resources/views/admin/users/
+└── resources/views/admin/ (Sisa child-folder lainnya)
+
+Finsus
+├── app/Http/Controllers/
+├── app/Models/
+├── app/Services/
+├── routes/
+├── config/
+├── app/Providers/
+├── app/Http/Middleware/
+├── bootstrap/
+├── app/Mail/
+└── resources/views/emails/
+
+Ghibran
+├── resources/views/ordinary/account/
+├── resources/views/ordinary/member/
+├── resources/views/ordinary/admission/
+├── resources/views/ordinary/checkout/
+├── resources/views/ordinary/order/
+├── resources/views/ordinary/ (Sisa child-folder lainnya)
+├── resources/views/components/
+├── resources/views/layouts/
+├── resources/js/
+└── public/
+
+FINAL VALIDATION
+- Daffa: 776.133 karakter
+- Fitya: 623.456 karakter
+- Umi: 492.816 karakter
+- Finsus: 354.362 karakter
+- Ghibran: 318.258 karakter
+
+- Gap Daffa ↔ Fitya: 152.677
+- Gap Fitya ↔ Umi: 130.640
+- Gap Umi ↔ Finsus: 138.454
+- Gap Finsus ↔ Ghibran: 36.104
