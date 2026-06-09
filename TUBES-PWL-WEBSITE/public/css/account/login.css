@@ -1,0 +1,174 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #111;
+}
+
+/* =========================
+   MAIN CENTER
+========================= */
+.auth-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================
+   CONTAINER (2 COLUMN)
+========================= */
+.auth-container {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* =========================
+   LEFT & RIGHT
+========================= */
+.auth-left,
+.auth-right {
+    width: 320px;
+}
+
+/* =========================
+   SEPARATOR (GARIS TENGAH)
+========================= */
+.auth-container::before {
+    content: "";
+    width: 1px;
+    background: #e0e0e0;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* =========================
+   TITLE
+========================= */
+.auth-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   INPUT
+========================= */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    background: transparent;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-bottom: 1px solid #000;
+}
+
+/* =========================
+   OPTIONS
+========================= */
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* =========================
+   GUEST SECTION
+========================= */
+.guest-desc {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* BUTTON GUEST */
+.guest-btn {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #000;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* =========================
+   REGISTER TEXT
+========================= */
+.register-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .auth-container::before {
+        display: none;
+    }
+
+    .auth-left,
+    .auth-right {
+        width: 100%;
+        max-width: 400px;
+    }
+}

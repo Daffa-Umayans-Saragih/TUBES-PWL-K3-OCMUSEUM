@@ -1,0 +1,112 @@
+/* Card Component Styles - Minimal Museum Design */
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+}
+
+.card-header {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.card-header h2,
+.card-header h3 {
+    margin: 0;
+    color: #000000;
+    font-weight: 500;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body p {
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+    line-height: 1.7;
+}
+
+.card-footer {
+    background-color: #f8f8f8;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-image img {
+    transform: scale(1.06);
+}
+
+/* Card Sizing Variants */
+
+.card-sm {
+    max-width: 280px;
+}
+
+.card-md {
+    max-width: 400px;
+}
+
+.card-lg {
+    max-width: 600px;
+}
+
+.card-full {
+    width: 100%;
+}
+
+/* Card with Badge */
+
+.card-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Cards */
+
+@media (max-width: 768px) {
+    .card-sm,
+    .card-md,
+    .card-lg {
+        max-width: 100%;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+    }
+}

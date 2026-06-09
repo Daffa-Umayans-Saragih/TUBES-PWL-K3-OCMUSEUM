@@ -1,0 +1,122 @@
+/* Footer Styles - Minimal Museum Design */
+
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid #333333;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h3 {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    list-style: none;
+    margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+    color: #999999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-section a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333333;
+    padding: 2rem;
+    text-align: center;
+    background-color: #0d0d0d;
+}
+
+.footer-bottom p {
+    margin: 0 0 1rem 0;
+    color: #999999;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.social-link {
+    color: #999999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.social-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ffffff;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Footer */
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .footer-bottom {
+        padding: 1.5rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+}

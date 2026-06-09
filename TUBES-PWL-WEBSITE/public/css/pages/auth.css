@@ -1,0 +1,174 @@
+/* Authentication Page Styles - Minimal Museum Design */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 2rem;
+    background-color: #fafafa;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    color: #000000;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #999999;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+.form-control {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-control::placeholder {
+    color: #999999;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    cursor: pointer;
+    gap: 0.75rem;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+}
+
+.checkbox-label input {
+    cursor: pointer;
+    accent-color: #000000;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    border-left: 4px solid #1a1a1a;
+}
+
+.alert-danger {
+    background-color: #faf2f2;
+    color: #8b3a3a;
+    border-left-color: #8b3a3a;
+}
+
+.alert-success {
+    background-color: #f2faf6;
+    color: #2d7a3a;
+    border-left-color: #2d7a3a;
+}
+
+.alert ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.alert li {
+    list-style: none;
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.auth-links {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.auth-links p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #999999;
+}
+
+.auth-links a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.auth-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.auth-links a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Auth Page */
+
+@media (max-width: 768px) {
+    .auth-container {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .auth-card {
+        padding: 1.5rem;
+    }
+
+    .auth-card h1 {
+        font-size: 1.8rem;
+    }
+}
