@@ -1,0 +1,9 @@
+.chart-card[data-chart="capacity"] {
+    border-left: 4px solid #7c6f56;
+}
+
+.chart-card[data-chart="capacity"] .chart-placeholder {
+    background: linear-gradient(180deg,
+            rgba(124, 111, 86, 0.16),
+            rgba(124, 111, 86, 0.06));
+}

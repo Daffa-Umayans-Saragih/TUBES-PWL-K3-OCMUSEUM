@@ -1,0 +1,18 @@
+.admin-settings {
+    align-items: start;
+}
+
+.admin-settings__sidebar {
+    position: sticky;
+    top: calc(var(--admin-navbar-height) + 20px);
+}
+
+.admin-settings__content {
+    gap: var(--admin-gap);
+}
+
+@media (max-width: 900px) {
+    .admin-settings__sidebar {
+        position: static;
+    }
+}

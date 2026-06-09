@@ -1,0 +1,55 @@
+@reference "tailwindcss";
+
+@layer components {
+
+    /* Section pembungkus utama agar konten tetap di tengah */
+    .main-section {
+        @apply max-w-screen-xl mx-auto px-6 md:px-10 py-12;
+    }
+
+    /* Styling untuk Title besar "Accessibility" */
+    .main-title {
+        @apply text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-3;
+    }
+
+    /* Styling untuk Subtitle/Deskripsi di bawahnya */
+    .main-subtitle {
+        @apply text-2xl md:text-2xl font-semibold text-gray-800 leading-tight max-w-4xl py-2 border-b-1 border-gray-200;
+    }
+
+    .gallery-desc {
+        @apply text-[13px] text-gray-700 font-normal tracking-wide mb-3;
+    }
+
+    .button_ticket-container-group {
+        /* mt-8 untuk jarak dari tabel atas, flex-col untuk mobile, md:flex-row untuk laptop */
+        @apply flex flex-row md:flex-row items-center gap-4;
+    }
+
+    .btn-ticket-responsive {
+        /* Tambah min-w-[180px] supaya ukuran tombol merah dan putih terlihat seimbang */
+        @apply bg-[#C6102E] text-white font-bold py-3 px-6 rounded-sm transition-all duration-300;
+        @apply w-49 md:w-auto;
+        @apply hover:bg-[#A30D26] active:scale-95;
+    }
+
+    /* Grid wrapper untuk setiap baris (Image + Desc) */
+    .cloisters-card {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-15 py-8 border-t-1 border-gray-200;
+    }
+
+    /* Styling Gambar */
+    .cloisters-image {
+        @apply w-full h-auto object-cover;
+    }
+
+    /* Styling Judul Program */
+    .cloisters-title {
+        @apply text-xl font-semibold text-gray-900 mb-2;
+    }
+
+    /* Styling Deskripsi */
+    .cloisters-desc {
+        @apply text-lg text-gray-500 tracking-wide leading-relaxed mb-2;
+    }
+}

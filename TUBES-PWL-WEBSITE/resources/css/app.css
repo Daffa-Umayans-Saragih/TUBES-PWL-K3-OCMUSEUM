@@ -1,0 +1,26 @@
+/* CUSTOM CORE (FITYA - DO NOT TOUCH ABOVE) */
+/* ============================= */
+
+@import 'tailwindcss';
+
+/* Ordinary (public-facing) site CSS */
+@import './ordinary/plan-your-visit/visit/visit.css';
+@import './ordinary/member/membership/membership.css';
+@import './ordinary/plan-your-visit/accessibility/accessibility.css';
+@import './ordinary/plan-your-visit/our-experience/our-experience.css';
+@import './ordinary/plan-your-visit/fifth/learn-more.css';
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* ============================= */
+/* IMPORTED DESIGN (SAFE ZONE) */
+/* ============================= */

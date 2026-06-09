@@ -1,0 +1,733 @@
+/* =============================================
+   ADMISSION PAGE — MET MUSEUM STYLE
+   ============================================= */
+
+:root {
+    --adm-ink: #1a1a1a;
+    --adm-muted: #555;
+    --adm-light: #999;
+    --adm-border: #ddd;
+    --adm-surface: #fff;
+    --adm-bg: #fafafa;
+    --adm-accent: #c81d33;
+    --adm-accent-hover: #a01729;
+    --adm-notice-bg: #e8e8e8;
+    --adm-radius: 0;
+    --adm-font-serif: Georgia, "Times New Roman", serif;
+    --adm-font-sans: Arial, Helvetica, sans-serif;
+}
+
+/* ── Shell ── */
+.admission-page {
+    background: var(--adm-bg);
+    min-height: 100vh;
+}
+
+.admission-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    color: var(--adm-ink);
+    font-family: var(--adm-font-sans);
+}
+
+.admission-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 40px;
+    align-items: start;
+}
+
+.admission-main {
+    min-width: 0;
+}
+
+/* ── Hidden ── */
+.step-hidden {
+    display: none;
+}
+
+/* ── Breadcrumb ── */
+.adm-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 0 12px;
+    font-size: 0.82rem;
+    color: var(--adm-light);
+}
+
+.adm-breadcrumb a {
+    color: var(--adm-ink);
+    text-decoration: underline;
+}
+
+.adm-breadcrumb .sep {
+    color: var(--adm-light);
+}
+
+.adm-breadcrumb .current {
+    color: var(--adm-light);
+    text-decoration: none;
+}
+
+/* =============================================
+   SECTION: INTRO (Image 1(1))
+   ============================================= */
+.section-intro {
+    margin-bottom: 32px;
+}
+
+.intro-title {
+    font-family: var(--adm-font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin: 0 0 28px;
+    line-height: 1.1;
+    color: var(--adm-ink);
+}
+
+.intro-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.intro-left h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 14px;
+    color: var(--adm-ink);
+}
+
+.intro-left ul {
+    margin: 0 0 20px;
+    padding-left: 18px;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #333;
+}
+
+.intro-left p {
+    margin: 0 0 16px;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #333;
+}
+
+.intro-left a {
+    color: var(--adm-ink);
+    text-decoration: underline;
+}
+
+.intro-right h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 14px;
+    color: var(--adm-ink);
+}
+
+.intro-right p {
+    margin: 0 0 10px;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #333;
+}
+
+.intro-right a {
+    color: var(--adm-ink);
+    text-decoration: underline;
+}
+
+/* ── Become a Member Banner ── */
+.member-banner {
+    background: var(--adm-accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    margin-top: 8px;
+}
+
+.member-banner-text h3 {
+    margin: 0 0 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.member-banner-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.member-banner .btn-join {
+    background: #fff;
+    color: var(--adm-accent);
+    border: none;
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.15s;
+}
+
+.member-banner .btn-join:hover {
+    background: #f0f0f0;
+}
+
+/* =============================================
+   SECTION: LOCATION (Image 1(2))
+   ============================================= */
+.section-location {
+    margin-bottom: 36px;
+}
+
+.section-heading {
+    font-family: var(--adm-font-serif);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--adm-ink);
+    line-height: 1.2;
+}
+
+.section-subtext {
+    margin: 0 0 20px;
+    font-size: 0.88rem;
+    color: var(--adm-muted);
+    line-height: 1.5;
+}
+
+.location-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.location-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    border: 1px solid var(--adm-border);
+    border-bottom: none;
+    background: var(--adm-surface);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+    position: relative;
+}
+
+.location-card:last-child {
+    border-bottom: 1px solid var(--adm-border);
+}
+
+.location-card * {
+    pointer-events: none;
+}
+
+.location-card:hover {
+    background-color: #fafafa;
+    border-color: #bbb;
+}
+
+.location-card:hover+.location-card {
+    border-top-color: #bbb;
+}
+
+.location-card.active {
+    border: 2px solid var(--adm-ink);
+    background-color: #f8f8f8;
+    z-index: 1;
+}
+
+.location-card.active+.location-card {
+    border-top-color: var(--adm-border);
+}
+
+.location-image {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.location-content {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-name {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--adm-ink);
+}
+
+.location-hours {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--adm-muted);
+}
+
+/* =============================================
+   SECTION: DATE (Image 2)
+   ============================================= */
+.section-date {
+    margin-bottom: 36px;
+}
+
+.date-pills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.date-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #aaa;
+    background: var(--adm-surface);
+    padding: 14px 16px;
+    border-radius: 999px;
+    font-family: var(--adm-font-sans);
+    font-size: 0.78rem;
+    color: var(--adm-muted);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    line-height: 1.35;
+}
+
+.date-pill .pill-label {
+    font-size: 0.78rem;
+    color: inherit;
+}
+
+.date-pill .pill-date {
+    font-size: 0.82rem;
+    color: #333;
+    margin-top: 2px;
+}
+
+.date-pill:hover {
+    border-color: #666;
+}
+
+.date-pill.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.date-pill.active .pill-label,
+.date-pill.active .pill-date {
+    color: #fff;
+}
+
+/* ── Calendar ── */
+.calendar-shell {
+    border: 1px solid var(--adm-border);
+    background: var(--adm-surface);
+    padding: 16px 20px 20px;
+}
+
+.calendar-input-row {
+    margin-bottom: 16px;
+}
+
+.calendar-input {
+    width: 100px;
+    padding: 7px 10px;
+    border: 1px solid #999;
+    font-family: var(--adm-font-sans);
+    font-size: 0.82rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+}
+
+.calendar-month-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.calendar-month-header h3 {
+    margin: 0;
+    font-family: var(--adm-font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.calendar-arrow {
+    color: var(--adm-muted);
+    font-size: 1.4rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.calendar-days,
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.calendar-days span {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: #777;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+}
+
+.calendar-dates span {
+    height: 30px;
+    display: grid;
+    place-items: center;
+    font-size: 0.78rem;
+    color: #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.12s;
+}
+
+.calendar-dates span:empty {
+    cursor: default;
+}
+
+.calendar-dates span:not(:empty):hover {
+    background: #f0f0f0;
+}
+
+.calendar-dates .is-today {
+    background: var(--adm-accent);
+    color: #fff;
+    font-weight: 700;
+}
+
+.calendar-dates .is-selected {
+    background: var(--adm-accent);
+    color: #fff;
+    font-weight: 700;
+}
+
+.calendar-dates .is-available {
+    color: var(--adm-ink);
+    font-weight: 600;
+}
+
+.calendar-dates .is-past {
+    color: #ccc;
+    pointer-events: none;
+    cursor: default;
+}
+
+.calendar-legend {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-size: 0.76rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #eee;
+    border: 1px solid #ddd;
+}
+
+/* =============================================
+   SECTION: TICKETS (Image 3)
+   ============================================= */
+.section-tickets {
+    margin-bottom: 36px;
+}
+
+.ticket-context {
+    margin: 0 0 20px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.ticket-notice {
+    background: var(--adm-notice-bg);
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.ticket-notice p {
+    margin: 0 0 10px;
+    font-size: 0.88rem;
+    color: #333;
+}
+
+.ticket-notice p:last-of-type {
+    margin-bottom: 14px;
+}
+
+.ticket-notice .field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--adm-muted);
+    font-weight: 600;
+}
+
+.zip-input {
+    width: 100%;
+    max-width: 280px;
+    border: 1px solid #999;
+    background: #fff;
+    padding: 10px 12px;
+    font-size: 0.88rem;
+    font-family: var(--adm-font-sans);
+}
+
+.ticket-info-text {
+    margin: 0 0 6px;
+    font-size: 0.88rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.ticket-info-text a {
+    color: var(--adm-ink);
+    text-decoration: underline;
+}
+
+/* ── Ticket List ── */
+.ticket-list {
+    border-top: 1px solid var(--adm-border);
+    margin-top: 8px;
+}
+
+.ticket-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--adm-border);
+}
+
+.ticket-info {
+    flex: 1;
+}
+
+.ticket-info h3 {
+    margin: 0 0 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--adm-ink);
+}
+
+.ticket-info p {
+    margin: 0;
+    font-size: 0.74rem;
+    color: var(--adm-light);
+}
+
+.ticket-price {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--adm-ink);
+    min-width: 60px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.ticket-control {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.btn-minus,
+.btn-plus {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #999;
+    background: var(--adm-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--adm-ink);
+    transition: background-color 0.12s;
+    user-select: none;
+}
+
+.btn-minus:hover,
+.btn-plus:hover {
+    background: #f0f0f0;
+}
+
+.btn-minus {
+    border-right: none;
+}
+
+.btn-plus {
+    border-left: none;
+}
+
+.qty {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: var(--adm-font-sans);
+    background: var(--adm-surface);
+}
+
+/* =============================================
+   SIDEBAR
+   ============================================= */
+.admission-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar-card {
+    border: 1px solid var(--adm-border);
+    background: var(--adm-surface);
+    padding: 20px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sidebar-header span:first-child {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--adm-ink);
+}
+
+.sidebar-subtotal {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--adm-ink);
+}
+
+.btn-next {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--adm-surface);
+    border: 1px solid var(--adm-border);
+    color: var(--adm-ink);
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: var(--adm-font-sans);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.btn-next:hover:not(:disabled) {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+.btn-next:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =============================================
+   DATE PLACEHOLDER (before location selected)
+   ============================================= */
+.date-placeholder {
+    font-size: 0.88rem;
+    color: var(--adm-muted);
+}
+
+.date-placeholder a {
+    color: var(--adm-ink);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* =============================================
+   NEED HELP SECTION
+   ============================================= */
+.section-help {
+    border-top: 1px solid var(--adm-border);
+    padding-top: 28px;
+    margin-top: 20px;
+}
+
+.section-help h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.section-help p {
+    font-size: 0.85rem;
+    color: var(--adm-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 860px) {
+    .admission-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-sidebar {
+        position: static;
+        order: -1;
+    }
+
+    .intro-columns {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .location-card {
+        grid-template-columns: 140px 1fr;
+    }
+
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .date-pills {
+        grid-template-columns: 1fr;
+    }
+}

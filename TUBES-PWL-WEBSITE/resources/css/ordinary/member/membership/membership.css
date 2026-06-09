@@ -1,0 +1,182 @@
+@reference "tailwindcss";
+
+@layer components {
+
+    /* --- HERO TEXT --- */
+    .page-title {
+        @apply text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight;
+    }
+
+    .page-subtitle {
+        @apply text-3xl md:text-4xl font-extrabold;
+    }
+
+    .header-desc {
+        @apply text-[15px] leading-relaxed max-w-2xl;
+    }
+
+    /* --- CARDS GRID --- */
+    .card-grid-met {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+    }
+
+    .card-met {
+        @apply flex flex-col bg-white border border-gray-100 shadow-sm transition-shadow duration-300 h-full;
+    }
+
+    .card-met:hover {
+        @apply shadow-xl;
+    }
+
+    .card-top {
+        @apply p-8 flex flex-col;
+    }
+
+    .card-type {
+        @apply text-2xl font-semibold mb-2;
+    }
+
+    .card-price {
+        @apply text-xl font-extrabold mb-4;
+    }
+
+    .card-icons {
+        @apply flex items-center my-4 text-xl text-gray-400;
+    }
+
+    .btn-join {
+        @apply w-full bg-[#BD0F21] text-white py-3 px-6 font-bold rounded-sm hover:bg-[#9A0E1C] transition-colors;
+    }
+
+    .card-bottom {
+        @apply bg-[#F2F2F2] p-8 flex-grow flex flex-col justify-between border-t border-gray-100;
+    }
+
+    .benefit-list {
+        @apply space-y-4 text-[15px] leading-tight;
+    }
+
+    .benefit-list li {
+        @apply flex justify-between items-start gap-2;
+    }
+
+    .bold-list {
+        @apply font-extrabold;
+    }
+
+    .info-icon {
+        @apply text-black text-lg cursor-help;
+    }
+
+    .legal-text {
+        @apply mt-8 pt-4 border-t border-gray-300 text-[13px] italic text-gray-600;
+    }
+
+    /* --- PATRON SECTION (SLIM & RESPONSIVE) --- */
+    .patron-wrapper {
+        @apply mt-16 w-full;
+    }
+
+    .patron-card {
+        @apply flex flex-col md:flex-row bg-white border border-gray-200 overflow-hidden shadow-sm;
+        /* Ramping vertikal: kita batasi max-height di desktop */
+        @apply md:max-h-[320px];
+    }
+
+    .patron-img-box {
+        @apply w-full md:w-1/2 h-[250px] md:h-auto overflow-hidden order-1 md:order-2;
+    }
+
+    .patron-img-box img {
+        @apply w-full h-full object-cover object-center scale-105;
+        /* Full dan ga kepotong */
+    }
+
+    .patron-info-box {
+        @apply w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center items-start order-2 md:order-1;
+    }
+
+    .patron-h {
+        @apply text-3xl md:text-4xl font-bold mb-4;
+    }
+
+    .patron-p {
+        @apply text-sm text-gray-600 mb-6 max-w-md;
+    }
+
+    .patron-link {
+        @apply inline-block px-8 py-2 border-2 border-black text-black font-bold hover:bg-black hover:text-white transition-all;
+    }
+
+    /* --- QUESTIONS & FAQ --- */
+    .faq-q {
+        @apply font-bold text-base mb-2;
+    }
+
+    .faq-a {
+        @apply text-gray-600 text-sm leading-relaxed;
+    }
+
+    /* Container Utama: Pakai flex-row supaya selalu menyamping */
+    .faq-contact-container {
+        @apply flex flex-row items-start gap-8 md:gap-16 border-t border-gray-200 pt-12 mt-12 w-full;
+    }
+
+    /* Pembungkus Tombol: Kasih lebar tetap supaya tidak gepeng */
+    .faq-btn-wrapper {
+        @apply flex-shrink-0 w-[140px] md:w-[180px];
+    }
+
+    /* Tombol FAQ: Merah khas Met */
+    .btn-faq-red {
+        @apply w-full bg-[#BD0F21] text-white py-3 font-bold text-sm tracking-widest hover:bg-[#9A0E1C] transition-colors rounded-sm;
+    }
+
+    /* Pembungkus Teks di Kanan */
+    .faq-text-wrapper {
+        @apply flex-1 flex flex-col;
+    }
+
+    /* Judul (Contact Us & Terms) */
+    .contact-title {
+        @apply text-[20px] font-extrabold text-[#2D2D2D] mb-2;
+    }
+
+    /* Detail Teks */
+    .contact-detail {
+        @apply text-[14px] text-[#2D2D2D];
+    }
+
+    .terms-text {
+        @apply text-[14px] leading-relaxed text-[#2D2D2D] max-w-2xl;
+    }
+
+    /* Link Underline Khusus */
+    .underline-link {
+        @apply underline decoration-1 underline-offset-4 hover:no-underline transition-colors;
+    }
+
+    .met-footer {
+        /* Warna background abu-abu sangat muda khas footer Met */
+        @apply border-t border-black py-15 mt-18;
+    }
+
+    .footer-container {
+        @apply max-w-screen-xl mx-auto px-3 text-center;
+    }
+
+    .footer-nav {
+        /* Di mobile flex-col (tumpuk), di desktop flex-row (menyamping) */
+        @apply flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mb-6;
+    }
+
+    .footer-link {
+        /* Font harus Bold dan Hitam sesuai foto */
+        @apply text-[13px] font-extrabold text-[#000000] hover:underline transition-all;
+    }
+
+    .footer-copyright {
+        /* Warna teks copyright biasanya sedikit lebih lembut (abu tua) */
+        @apply text-[12px] text-gray-600 font-normal;
+    }
+}

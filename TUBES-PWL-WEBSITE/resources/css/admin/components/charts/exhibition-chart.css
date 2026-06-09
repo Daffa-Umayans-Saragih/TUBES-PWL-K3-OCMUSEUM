@@ -1,0 +1,9 @@
+.chart-card[data-chart="exhibition"] {
+    border-left: 4px solid #4c6a8b;
+}
+
+.chart-card[data-chart="exhibition"] .chart-placeholder {
+    background: linear-gradient(180deg,
+            rgba(76, 106, 139, 0.14),
+            rgba(76, 106, 139, 0.05));
+}

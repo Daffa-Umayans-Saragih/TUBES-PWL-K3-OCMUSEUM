@@ -1,0 +1,7 @@
+.stat-card--skeleton {
+    gap: 12px;
+}
+
+.stat-card--skeleton .skeleton {
+    width: 100%;
+}

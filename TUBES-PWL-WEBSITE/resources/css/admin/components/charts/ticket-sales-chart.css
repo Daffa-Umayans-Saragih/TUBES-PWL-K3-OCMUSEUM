@@ -1,0 +1,9 @@
+.chart-card[data-chart="ticket-sales"] {
+    border-left: 4px solid #b85b2e;
+}
+
+.chart-card[data-chart="ticket-sales"] .chart-placeholder {
+    background: linear-gradient(180deg,
+            rgba(184, 91, 46, 0.14),
+            rgba(184, 91, 46, 0.05));
+}

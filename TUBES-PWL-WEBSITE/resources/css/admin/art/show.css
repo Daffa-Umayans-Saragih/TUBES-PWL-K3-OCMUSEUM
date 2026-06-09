@@ -1,0 +1,305 @@
+/* ========== ADMIN CONTAINER ========== */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========== ADMIN HEADER ========== */
+.admin-header {
+    margin-bottom: 1.5rem;
+}
+
+.admin-header h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.admin-header .subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* ========== ARTWORK CONTENT GRID ========== */
+.artwork-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* ========== ARTWORK IMAGES SECTION ========== */
+.artwork-images {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========== IMAGE GALLERY ========== */
+.image-gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.image-gallery-main {
+    width: 100%;
+    height: 400px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.image-gallery-main img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.image-gallery-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+}
+
+.image-gallery-thumb {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.image-gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.image-gallery-thumb.active {
+    border-color: #000;
+}
+
+.image-gallery-thumb:hover img {
+    opacity: 0.8;
+}
+
+/* ========== NO IMAGE PLACEHOLDER ========== */
+.no-image-placeholder {
+    text-align: center;
+    color: #999;
+}
+
+.no-image-placeholder svg {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* ========== INFO SECTIONS ========== */
+.info-group {
+    margin-bottom: 2rem;
+}
+
+.info-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.info-value {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.info-value strong {
+    color: #333;
+    font-weight: 500;
+}
+
+/* ========== BADGES ========== */
+.badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    font-size: 0.85rem;
+    color: #333;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 2px;
+}
+
+/* ========== DETAILS GRID ========== */
+.details-grid {
+    background-color: #fafafa;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+.details-grid .info-group:last-child {
+    margin-bottom: 0;
+}
+
+/* ========== ACTIONS BOX ========== */
+.actions-box {
+    background-color: #fafafa;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+    min-width: 150px;
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #222;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-danger {
+    background-color: #f5e6e6;
+    color: #c33;
+    border-color: #e0c0c0;
+}
+
+.btn-danger:hover {
+    background-color: #ead0d0;
+}
+
+/* ========== TIMESTAMP ========== */
+.timestamp {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* ========== METADATA TABLE ========== */
+.metadata-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.metadata-table th,
+.metadata-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.metadata-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metadata-table td {
+    color: #666;
+}
+
+.metadata-label {
+    font-weight: 500;
+    color: #333;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.metadata-table code {
+    background-color: #f5f5f5;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 2px;
+    font-family: "Courier New", monospace;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .artwork-content {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger {
+        width: 100%;
+        min-width: auto;
+        flex: 1;
+    }
+
+    .artwork-images {
+        min-height: 300px;
+    }
+
+    .image-gallery-main {
+        height: 300px;
+    }
+
+    .image-gallery-thumb {
+        width: 60px;
+        height: 60px;
+    }
+}

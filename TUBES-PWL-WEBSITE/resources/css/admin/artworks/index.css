@@ -1,0 +1,15 @@
+.artworks-summary {
+    margin-top: 4px;
+}
+
+.artworks-layout {
+    align-items: start;
+}
+
+.artworks-side .admin-panel__body {
+    gap: 10px;
+}
+
+.artworks-bottom {
+    align-items: start;
+}

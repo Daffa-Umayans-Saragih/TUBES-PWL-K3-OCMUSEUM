@@ -1,0 +1,15 @@
+.users-summary {
+    margin-top: 4px;
+}
+
+.users-layout {
+    align-items: start;
+}
+
+.users-profile .admin-panel__body {
+    align-items: flex-start;
+}
+
+.users-segments {
+    margin-top: 4px;
+}

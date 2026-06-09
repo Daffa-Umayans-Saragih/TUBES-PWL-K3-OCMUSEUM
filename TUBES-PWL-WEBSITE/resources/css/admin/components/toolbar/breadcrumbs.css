@@ -1,0 +1,38 @@
+.admin-breadcrumbs {
+    font-size: 0.8rem;
+    color: var(--admin-ink-muted);
+}
+
+.admin-breadcrumbs__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-breadcrumbs__item:not(:last-child)::after {
+    content: "/";
+    color: var(--admin-ink-muted);
+}
+
+.admin-breadcrumbs__link {
+    color: var(--admin-ink-muted);
+    transition: color var(--admin-transition);
+}
+
+.admin-breadcrumbs__link:hover {
+    color: var(--admin-primary);
+}
+
+.admin-breadcrumbs__current {
+    color: var(--admin-ink);
+    font-weight: 600;
+}

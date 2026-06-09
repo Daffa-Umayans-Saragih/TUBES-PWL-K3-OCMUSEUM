@@ -1,0 +1,1255 @@
+/*
+=============================================================
+  resources/css/ordinary/art/detail/detail.css
+  MET Museum — Artwork Detail Page
+  Near 1:1 visual match to metmuseum.org artwork pages.
+  Pure CSS — no Bootstrap. No cards. No shadows. No radius.
+  Museum-grade. Editorial. Premium. Minimal.
+=============================================================
+*/
+
+@import '../../../art/show.css';
+
+/* ============================================================
+   DESIGN TOKENS
+============================================================ */
+:root {
+    /* Colors */
+    --met-black: #1a1a1a;
+    --met-near-black: #2c2c2c;
+    --met-gray: #767676;
+    --met-light-gray: #f0f0f0;
+    --met-border: #e8e8e8;
+    --met-row-border: #f0f0f0;
+    --met-red: #E60028;
+    --met-white: #ffffff;
+    --met-bg: #fafafa;
+
+    /* Typography */
+    --font-serif: Georgia, 'Times New Roman', Times, serif;
+    --font-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    /* Type scale */
+    --size-title: 38px;
+    --size-body: 15px;
+    --size-meta: 14px;
+    --size-small: 13px;
+    --size-caption: 12px;
+    --size-label: 13px;
+    --size-section: 22px;
+
+    /* Line heights */
+    --lh-title: 1.15;
+    --lh-body: 1.75;
+    --lh-meta: 1.55;
+    --lh-label: 1.5;
+
+    /* Spacing */
+    --hero-top: 72px;
+    --hero-bottom: 64px;
+    --section-gap: 72px;
+    --col-gap: 0px;
+}
+
+/* ============================================================
+   GLOBAL RESET — scoped to this page only
+============================================================ */
+.met-page *,
+.met-page *::before,
+.met-page *::after {
+    box-sizing: border-box;
+}
+
+.met-page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    color: var(--met-black);
+    font-family: var(--font-sans);
+    font-size: var(--size-body);
+    background: var(--met-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   BREADCRUMB
+============================================================ */
+.met-breadcrumb {
+    padding: 22px 0 0;
+    font-size: var(--size-caption);
+    color: var(--met-gray);
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.met-breadcrumb a {
+    color: var(--met-gray);
+    text-decoration: none;
+}
+
+.met-breadcrumb a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.met-breadcrumb__sep {
+    margin: 0 5px;
+    color: var(--met-gray);
+}
+
+.met-breadcrumb__current {
+    color: var(--met-near-black);
+}
+
+/* ============================================================
+   HERO SECTION
+   Layout: 42% left info / 58% right gallery
+============================================================ */
+.met-hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding-bottom: var(--hero-bottom);
+    border-bottom: 1px solid var(--met-border);
+}
+
+/* ── LEFT COLUMN ── */
+.met-hero__info {
+    width: 42%;
+    flex-shrink: 0;
+    padding-top: var(--hero-top);
+    padding-right: 52px;
+}
+
+/* TITLE — only serif element on the page */
+.met-hero__title {
+    font-family: var(--font-serif);
+    font-size: var(--size-title);
+    font-weight: 700;
+    line-height: var(--lh-title);
+    color: var(--met-black);
+    margin: 0 0 14px 0;
+    letter-spacing: 0;
+    word-break: break-word;
+}
+
+/* MAKERS BLOCK */
+.met-hero__makers {
+    margin-bottom: 32px;
+}
+
+.met-hero__maker-line {
+    font-size: var(--size-meta);
+    font-weight: 400;
+    color: var(--met-black);
+    line-height: var(--lh-meta);
+    margin: 0 0 4px 0;
+}
+
+.met-hero__maker-line a {
+    color: var(--met-black);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(26, 26, 26, 0.4);
+}
+
+.met-hero__maker-line a:hover {
+    text-decoration-color: var(--met-black);
+}
+
+.met-hero__maker-suffix {
+    color: var(--met-near-black);
+}
+
+.met-hero__date {
+    font-size: var(--size-meta);
+    color: var(--met-black);
+    line-height: var(--lh-meta);
+    margin: 4px 0 0 0;
+}
+
+/* GALLERY LOCATION */
+.met-hero__location {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: var(--size-small);
+    color: var(--met-black);
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+.met-hero__location-pin {
+    width: 7px;
+    height: 7px;
+    background: var(--met-black);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.met-hero__location a {
+    color: var(--met-red);
+    text-decoration: none;
+}
+
+.met-hero__location a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* DESCRIPTION */
+.met-hero__description-wrap {
+    /* wrapper holds both text and toggle */
+}
+
+.met-hero__description {
+    font-size: var(--size-body);
+    line-height: var(--lh-body);
+    color: var(--met-black);
+    max-width: 530px;
+
+    /* Collapsed state: 5 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.met-hero__description.is-expanded {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+}
+
+/* VIEW MORE BUTTON */
+.met-hero__viewmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--size-meta);
+    font-family: var(--font-sans);
+    color: var(--met-black);
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.met-hero__viewmore:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.met-hero__viewmore-icon {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.met-hero__viewmore.is-open .met-hero__viewmore-icon {
+    transform: rotate(180deg);
+}
+
+/* ── RIGHT COLUMN — gallery ── */
+.met-hero__gallery {
+    width: 58%;
+    flex-shrink: 0;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAIN IMAGE CONTAINER */
+.met-hero__image-wrap {
+    background: var(--met-light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    /* No shadow. No border. No border-radius. */
+}
+
+.met-hero__main-image {
+    max-width: 100%;
+    max-height: 560px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* CAPTION */
+.met-hero__caption {
+    font-size: var(--size-caption);
+    color: var(--met-gray);
+    text-align: center;
+    margin: 8px 0 0 0;
+    line-height: 1.4;
+    min-height: 16px;
+}
+
+/* PUBLIC DOMAIN + ACTION ROW */
+.met-hero__meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.met-hero__public-domain {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--size-small);
+    color: var(--met-gray);
+    line-height: 1.4;
+}
+
+.met-hero__public-domain svg {
+    flex-shrink: 0;
+    color: var(--met-gray);
+}
+
+.met-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.met-hero__action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: var(--met-near-black);
+    opacity: 0.65;
+    transition: opacity 0.15s ease;
+    text-decoration: none;
+}
+
+.met-hero__action-btn:hover {
+    opacity: 1;
+}
+
+.met-hero__action-btn svg {
+    width: 19px;
+    height: 19px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: block;
+}
+
+/* THUMBNAIL STRIP */
+.met-hero__thumbs {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.met-hero__thumb {
+    width: 70px;
+    height: 68px;
+    flex-shrink: 0;
+    background: var(--met-light-gray);
+    border: 2px solid transparent;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.12s ease;
+    /* No border-radius. No shadow. Flat. */
+}
+
+.met-hero__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.met-hero__thumb.is-active {
+    border-color: var(--met-black);
+}
+
+.met-hero__thumb:not(.is-active):hover {
+    border-color: #a0a0a0;
+}
+
+/* ============================================================
+   ARTWORK DETAILS SECTION
+============================================================ */
+.met-details {
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+    border-bottom: 1px solid var(--met-border);
+}
+
+.met-details__heading {
+    font-family: var(--font-sans);
+    font-size: var(--size-section);
+    font-weight: 600;
+    color: var(--met-black);
+    line-height: 1.2;
+    margin: 0 0 28px 0;
+    letter-spacing: 0;
+}
+
+/* TWO COLUMN: sidebar 25% / content 75% */
+.met-details__layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+/* ── SIDEBAR ── */
+.met-details__sidebar {
+    width: 26%;
+    flex-shrink: 0;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    /* No background. No border. Just text. */
+}
+
+.met-details__tab {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    border-left: 3px solid transparent;
+    /* always present — prevents layout shift */
+    padding: 12px 0 12px 14px;
+    font-family: var(--font-sans);
+    font-size: var(--size-meta);
+    font-weight: 400;
+    color: var(--met-gray);
+    text-align: left;
+    cursor: pointer;
+    line-height: 1.45;
+    transition: color 0.15s ease;
+    /* No border-radius. No background. */
+}
+
+.met-details__tab:hover {
+    color: var(--met-black);
+}
+
+/* ACTIVE TAB — the three simultaneous signals */
+.met-details__tab.is-active {
+    border-left-color: var(--met-red);
+    /* 1. red left bar */
+    color: var(--met-black);
+    /* 2. color shift gray → black */
+    font-weight: 600;
+    /* 3. weight shift 400 → 600 */
+}
+
+/* ── CONTENT PANEL ── */
+.met-details__panels {
+    flex: 1;
+    min-width: 0;
+}
+
+.met-details__panel {
+    /* Hidden by default */
+}
+
+.met-details__panel.is-active {
+    display: block;
+}
+
+/* ============================================================
+   OVERVIEW — DETAIL LIST
+   Clean museum label:value rows
+============================================================ */
+.met-detail-list {
+    margin: 0;
+    padding: 0;
+}
+
+.met-detail-row {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--met-row-border);
+}
+
+.met-detail-row:first-child {
+    border-top: 1px solid var(--met-row-border);
+}
+
+.met-detail-label {
+    font-size: var(--size-label);
+    font-weight: 700;
+    color: var(--met-black);
+    line-height: var(--lh-label);
+    min-width: 160px;
+    flex-shrink: 0;
+}
+
+.met-detail-value {
+    font-size: var(--size-meta);
+    font-weight: 400;
+    color: var(--met-near-black);
+    line-height: var(--lh-label);
+    flex: 1;
+}
+
+.met-detail-value a {
+    color: var(--met-black);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(26, 26, 26, 0.4);
+}
+
+.met-detail-value a:hover {
+    text-decoration-color: var(--met-black);
+}
+
+.met-detail-meta {
+    color: var(--met-gray);
+    font-size: var(--size-small);
+    display: block;
+    margin-top: 2px;
+}
+
+/* ============================================================
+   SIGNATURES TAB — same dl structure
+============================================================ */
+/* Reuses .met-detail-list / .met-detail-row — no extra CSS needed */
+
+/* ============================================================
+   PROVENANCE TAB — editorial prose
+============================================================ */
+.met-provenance {
+    font-size: var(--size-body);
+    line-height: var(--lh-body);
+    color: var(--met-near-black);
+    max-width: 720px;
+    padding-top: 4px;
+}
+
+/* ============================================================
+   EXHIBITION HISTORY TAB — elegant list
+============================================================ */
+.met-exhibition-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.met-exhibition-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--met-row-border);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.met-exhibition-item:first-child {
+    border-top: 1px solid var(--met-row-border);
+}
+
+.met-exhibition-title {
+    font-size: var(--size-meta);
+    font-weight: 600;
+    color: var(--met-black);
+    line-height: 1.45;
+    font-style: italic;
+}
+
+.met-exhibition-meta {
+    font-size: var(--size-small);
+    color: var(--met-gray);
+    line-height: 1.45;
+}
+
+.met-exhibition-catalog {
+    font-size: var(--size-small);
+    color: var(--met-gray);
+    line-height: 1.45;
+}
+
+/* EMPTY STATE */
+.met-details__empty {
+    font-size: var(--size-meta);
+    color: var(--met-gray);
+    line-height: var(--lh-body);
+    padding: 4px 0;
+}
+
+/* ============================================================
+   MORE ARTWORK SECTION
+============================================================ */
+.met-more {
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+}
+
+.met-more__header {
+    display: flex;
+    align-items: baseline;
+    gap: 40px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--met-border);
+    padding-bottom: 0;
+}
+
+.met-more__heading {
+    font-family: var(--font-sans);
+    font-size: var(--size-section);
+    font-weight: 600;
+    color: var(--met-black);
+    margin: 0;
+    padding-bottom: 20px;
+    line-height: 1.2;
+}
+
+.met-more__tabs {
+    display: flex;
+    gap: 0;
+}
+
+.met-more__tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0 0 20px 0;
+    margin-right: 32px;
+    font-family: var(--font-sans);
+    font-size: var(--size-meta);
+    font-weight: 400;
+    color: var(--met-gray);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    line-height: 1.4;
+    position: relative;
+    top: 1px;
+}
+
+.met-more__tab.is-active {
+    color: var(--met-black);
+    border-bottom-color: var(--met-black);
+    font-weight: 600;
+}
+
+.met-more__tab:hover {
+    color: var(--met-black);
+}
+
+/* ARTWORK GRID */
+.met-more__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 24px;
+}
+
+.met-more__card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--met-black);
+    /* No card. No shadow. No border. No radius. */
+}
+
+.met-more__card:hover .met-more__card-title {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.met-more__card-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--met-light-gray);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.met-more__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.met-more__card:hover .met-more__card-image img {
+    transform: scale(1.02);
+}
+
+.met-more__card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.met-more__card-artist {
+    font-size: var(--size-small);
+    color: var(--met-gray);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.met-more__card-title {
+    font-size: var(--size-meta);
+    color: var(--met-black);
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.met-more__card-date {
+    font-size: var(--size-small);
+    color: var(--met-gray);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ============================================================
+   LIGHTBOX
+============================================================ */
+.met-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.met-lightbox[hidden] {
+    display: none;
+}
+
+.met-lightbox.is-open {
+    opacity: 1;
+}
+
+.met-lightbox__close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+}
+
+.met-lightbox__close:hover {
+    color: #fff;
+}
+
+.met-lightbox__close svg {
+    width: 28px;
+    height: 28px;
+}
+
+.met-lightbox__img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+}
+
+/* ============================================================
+   TOAST — Share feedback
+============================================================ */
+.met-toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: var(--met-black);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: var(--size-small);
+    padding: 10px 20px;
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+    z-index: 8000;
+    white-space: nowrap;
+}
+
+.met-toast[hidden] {
+    display: none;
+}
+
+.met-toast.is-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET
+============================================================ */
+@media (max-width: 1024px) {
+    .met-page {
+        padding: 0 28px;
+    }
+
+    .met-hero__title {
+        font-size: 32px;
+    }
+
+    .met-more__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+============================================================ */
+@media (max-width: 768px) {
+    :root {
+        --hero-top: 32px;
+        --hero-bottom: 48px;
+        --section-gap: 48px;
+    }
+
+    .met-page {
+        padding: 0 20px;
+    }
+
+    /* Stack hero vertically — image first, info below */
+    .met-hero {
+        flex-direction: column;
+    }
+
+    .met-hero__info {
+        width: 100%;
+        padding-right: 0;
+        order: 2;
+        padding-top: 32px;
+    }
+
+    .met-hero__gallery {
+        width: 100%;
+        order: 1;
+        padding-top: 24px;
+    }
+
+    .met-hero__title {
+        font-size: 28px;
+    }
+
+    .met-hero__image-wrap {
+        min-height: 300px;
+    }
+
+    /* Stack details vertically */
+    .met-details__layout {
+        flex-direction: column;
+    }
+
+    .met-details__sidebar {
+        width: 100%;
+        padding-right: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        border-bottom: 1px solid var(--met-border);
+        margin-bottom: 24px;
+    }
+
+    .met-details__tab {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 10px 14px 10px 0;
+        margin-right: 16px;
+        font-size: var(--size-small);
+    }
+
+    .met-details__tab.is-active {
+        border-bottom-color: var(--met-red);
+        border-left-color: transparent;
+    }
+
+    /* Detail rows stack */
+    .met-detail-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .met-detail-label {
+        min-width: unset;
+    }
+
+    /* More grid */
+    .met-more__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 16px;
+    }
+
+    .met-more__header {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .met-more__heading {
+        padding-bottom: 16px;
+    }
+
+    .met-more__tabs {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   ANTI-BOOTSTRAP OVERRIDES
+   Remove any Bootstrap card / container contamination
+   that might bleed in from the parent layout.
+============================================================ */
+.met-page .card,
+.met-page .card-body,
+.met-page .card-header {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+.met-page .container,
+.met-page .container-fluid {
+    padding: 0 !important;
+}
+
+.met-page .row {
+    margin: 0 !important;
+}
+
+.met-page .col,
+.met-page [class*="col-"] {
+    padding: 0 !important;
+}
+
+/* ============================================================
+   NEW MUSEUM-GRADE SECTIONS (Description, Provenance, SIM, Exhibition, References)
+============================================================ */
+
+/* ── Section subtitle ── */
+.met-section-subtitle {
+    font-size: var(--size-small);
+    color: var(--met-gray);
+    margin: 0 0 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ════════════ SIM ════════════ */
+.met-sim-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 8px;
+}
+
+.met-sim-group__heading {
+    font-family: var(--font-sans);
+    font-size: var(--size-small);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--met-gray);
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--met-border);
+}
+
+.met-sim-entry {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--met-row-border);
+}
+
+.met-sim-entry:last-child {
+    border-bottom: none;
+}
+
+.met-sim-badge {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+.met-sim-badge--signature {
+    background: #f0e6d0;
+    color: #7a4f1a;
+    border: 1px solid #d4b896;
+}
+
+.met-sim-badge--inscription {
+    background: #e6edf5;
+    color: #1a3d6b;
+    border: 1px solid #a0bcd8;
+}
+
+.met-sim-badge--marking {
+    background: #e8f0e6;
+    color: #2a5a24;
+    border: 1px solid #9cbf96;
+}
+
+.met-sim-text {
+    font-family: var(--font-sans);
+    font-size: var(--size-meta);
+    line-height: var(--lh-body);
+    color: var(--met-near-black);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ════════════ PROVENANCE & DESCRIPTION ════════════ */
+.met-collapsible-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.met-provenance-note {
+    font-size: var(--size-small);
+    line-height: var(--lh-meta);
+    color: var(--met-gray);
+    font-style: italic;
+    margin: 0 0 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--met-border);
+}
+
+.met-collapsible-body {
+    max-height: 220px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height .4s ease;
+}
+
+.met-collapsible-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: linear-gradient(to bottom, transparent, var(--met-bg));
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.met-collapsible-body--open {
+    max-height: 2000px;
+}
+
+.met-collapsible-body--open::after {
+    opacity: 0;
+}
+
+.met-collapsible-pre {
+    font-family: var(--font-sans);
+    font-size: var(--size-body);
+    line-height: var(--lh-body);
+    color: var(--met-near-black);
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.met-collapsible-toggle {
+    align-self: flex-start;
+    margin-top: 12px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: var(--size-small);
+    font-family: var(--font-sans);
+    color: var(--met-black);
+    text-decoration: underline;
+    text-decoration-color: #bbb;
+    text-underline-offset: 2px;
+}
+
+.met-collapsible-toggle:hover {
+    color: var(--met-red);
+}
+
+/* ════════════ EXHIBITION TIMELINE ════════════ */
+.met-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 2px solid var(--met-border);
+    margin-left: 8px;
+}
+
+.met-timeline__item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 0 0 28px 0;
+    position: relative;
+}
+
+.met-timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+.met-timeline__dot {
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--met-white);
+    border: 2px solid var(--met-red);
+    flex-shrink: 0;
+}
+
+.met-timeline__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 22px;
+}
+
+.met-timeline__title {
+    font-size: var(--size-meta);
+    font-weight: 600;
+    color: var(--met-black);
+    line-height: 1.4;
+}
+
+.met-timeline__venue {
+    font-size: var(--size-small);
+    color: var(--met-gray);
+}
+
+.met-timeline__date {
+    font-size: 12.5px;
+    color: var(--met-gray);
+    font-style: italic;
+}
+
+.met-timeline__cat {
+    font-size: 12px;
+    color: var(--met-gray);
+    background: var(--met-light-gray);
+    padding: 1px 7px;
+    display: inline-block;
+    border-radius: 2px;
+    width: fit-content;
+}
+
+/* ════════════ REFERENCES BIBLIOGRAPHY ════════════ */
+.met-biblist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: bibcounter;
+}
+
+.met-biblist__item {
+    counter-increment: bibcounter;
+    display: flex;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--met-row-border);
+    align-items: flex-start;
+}
+
+.met-biblist__item:last-child {
+    border-bottom: none;
+}
+
+.met-biblist__item::before {
+    content: counter(bibcounter);
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--met-black);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-top: 2px;
+    font-family: var(--font-sans);
+}
+
+.met-biblist__text {
+    font-family: var(--font-sans);
+    font-size: var(--size-meta);
+    line-height: var(--lh-body);
+    color: var(--met-near-black);
+    white-space: pre-wrap;
+    word-break: break-word;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .met-sim-entry {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .met-sim-badge {
+        align-self: flex-start;
+    }
+
+    .met-timeline__body {
+        padding-left: 16px;
+    }
+
+    .met-biblist__item {
+        gap: 10px;
+    }
+}

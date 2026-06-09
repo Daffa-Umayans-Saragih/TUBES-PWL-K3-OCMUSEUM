@@ -1,0 +1,124 @@
+/* Mirror stylesheet for components/navbar.blade.php */
+/* NAVBAR BASE */
+.navbar {
+    background: #d0021b;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* CONTAINER */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 50px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* MENU */
+.navbar-menu {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+/* Hover underline elegant */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    opacity: 0.85;
+}
+
+/* AUTH AREA */
+.navbar-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* USER NAME */
+.user-name {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* BUTTON STYLE */
+.btn-login,
+.btn-register {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* LOGIN */
+.btn-login {
+    border: 1px solid white;
+    color: white;
+}
+
+/* REGISTER / CTA */
+.btn-register {
+    background: white;
+    color: #d0021b;
+    font-weight: 500;
+}
+
+/* LOGOUT BUTTON FIX */
+.logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

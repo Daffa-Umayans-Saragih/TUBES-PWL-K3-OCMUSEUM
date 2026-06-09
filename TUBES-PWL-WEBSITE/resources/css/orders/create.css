@@ -1,0 +1,113 @@
+.order-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-header {
+    margin-bottom: 2rem;
+}
+
+.form-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #666;
+}
+
+.form-section {
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: #fafafa;
+}
+
+.form-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-summary {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.summary-item.total {
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #222;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    border-bottom-color: #000;
+}

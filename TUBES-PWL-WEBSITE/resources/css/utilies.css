@@ -1,0 +1,95 @@
+/* ========== UTILITIES / HELPER CLASSES ========== */
+
+/* ========== SPACING UTILITIES ========== */
+.form-no-margin {
+    margin: 0;
+}
+
+.mb-2rem {
+    margin-bottom: 2rem;
+}
+
+.mb-0-5rem {
+    margin-bottom: 0.5rem;
+}
+
+/* ========== TEXT UTILITIES ========== */
+.text-muted-light {
+    color: #999;
+}
+
+.text-gray-3 {
+    color: #666;
+}
+
+/* ========== FORM UTILITIES ========== */
+.form-inline {
+    display: inline;
+}
+
+.form-helper-text {
+    color: #666;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.form-section-label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.error-list {
+    margin: 0.5rem 0 0 1rem;
+}
+
+/* ========== LAYOUT UTILITIES ========== */
+.info-section-centered {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.container-max-800 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-centered-padded {
+    text-align: center;
+    padding: 3rem;
+}
+
+.user-info-spacer {
+    margin-left: auto;
+    padding-right: 1.5rem;
+}
+
+/* ========== GRADIENT COLLECTION CARDS ========== */
+.collection-image-gradient-purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.collection-image-gradient-pink {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.collection-image-gradient-cyan {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.collection-image-gradient-peach {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.collection-image-gradient-mint {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.collection-image-gradient-orange {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+}

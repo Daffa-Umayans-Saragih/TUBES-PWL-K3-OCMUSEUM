@@ -1,0 +1,82 @@
+/* Mirror stylesheet for components/admin-sidebar.blade.php */
+.admin-sidebar {
+    width: 240px;
+    height: 100vh;
+    background: #1f1f1f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+/* BRAND */
+.admin-sidebar-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-sidebar-brand h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.admin-sidebar-brand .subtitle {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* NAV */
+.admin-nav {
+    list-style: none;
+    padding: 0;
+}
+
+/* SECTION TITLE */
+.admin-nav-section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    padding: 10px 20px;
+}
+
+/* ITEM */
+.admin-nav-item {
+    margin: 5px 0;
+}
+
+/* LINK */
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+/* ICON */
+.admin-nav-icon {
+    font-size: 14px;
+}
+
+/* HOVER */
+.admin-nav-link:hover {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+/* ACTIVE */
+.admin-nav-link.active {
+    background: #d0021b;
+    color: white;
+    font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+    }
+}

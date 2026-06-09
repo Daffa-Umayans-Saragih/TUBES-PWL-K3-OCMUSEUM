@@ -1,0 +1,9 @@
+.chart-card[data-chart="visitor"] {
+    border-left: 4px solid #1f6f8b;
+}
+
+.chart-card[data-chart="visitor"] .chart-placeholder {
+    background: linear-gradient(180deg,
+            rgba(31, 111, 139, 0.14),
+            rgba(31, 111, 139, 0.05));
+}

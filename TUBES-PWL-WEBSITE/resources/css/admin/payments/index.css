@@ -1,0 +1,15 @@
+.payments-summary {
+    margin-top: 4px;
+}
+
+.payments-layout {
+    align-items: start;
+}
+
+.payments-primary .chart-card {
+    height: 100%;
+}
+
+.payments-side .admin-panel__body {
+    gap: 12px;
+}

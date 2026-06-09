@@ -1,0 +1,26 @@
+/* Page: ordinary/checkout/success.blade.php */
+.status-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.pending {
+    background: #fef7e0;
+    color: #f29900;
+}
+
+.status-badge.paid,
+.status-badge.valid {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.status-badge.completed,
+.status-badge.used {
+    background: #e1f5fe;
+    color: #01579b;
+}

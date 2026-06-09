@@ -1,0 +1,248 @@
+/* resources/css/ordinary/checkout/payments.css */
+:root {
+    --met-red: #c3002f;
+    --met-dark: #1a1a1a;
+    --met-gray: #f5f5f5;
+    --met-border: #e0e0e0;
+}
+
+.payments-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Inter", -apple-system, sans-serif;
+}
+
+.payments-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.payments-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--met-dark);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.payments-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.payments-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .payments-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.payments-card {
+    background: #fff;
+    border: 1px solid var(--met-border);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-section {
+    margin-bottom: 30px;
+}
+
+.card-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--met-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: "";
+    width: 4px;
+    height: 20px;
+    background: var(--met-red);
+    border-radius: 2px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    color: var(--met-dark);
+    font-weight: 500;
+}
+
+/* Order Summary */
+.summary-box {
+    position: sticky;
+    top: 20px;
+}
+
+.summary-list {
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--met-gray);
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-weight: 600;
+    color: var(--met-dark);
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.item-price {
+    font-weight: 500;
+    color: var(--met-dark);
+}
+
+.total-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid var(--met-dark);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 25px;
+}
+
+.total-label {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--met-dark);
+}
+
+.total-amount {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--met-red);
+}
+
+.btn-checkout {
+    display: block;
+    width: 100%;
+    background: var(--met-dark);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-checkout:hover {
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-checkout:active {
+    transform: translateY(0);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background: #fef7e0;
+    color: #f29900;
+}
+
+.status-paid,
+.status-valid {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.status-completed,
+.status-used {
+    background: #e1f5fe;
+    color: #01579b;
+}
+
+.qr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.qr-card {
+    background: var(--met-gray);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.qr-code-text {
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}

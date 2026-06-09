@@ -1,0 +1,335 @@
+:root {
+    --met-red: #e4002b;
+    --met-red-dark: #bc0022;
+    --paper: #ffffff;
+    --paper-soft: #f6f4f2;
+    --ink: #171717;
+    --ink-soft: #5d5d5d;
+    --line: #e8e4df;
+    --shadow-soft: 0 10px 30px rgba(18, 14, 10, 0.08);
+    --shadow-hover: 0 16px 36px rgba(18, 14, 10, 0.14);
+    --radius-lg: 18px;
+    --radius-md: 14px;
+}
+
+.booking-page {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 32px) 64px;
+    color: var(--ink);
+}
+
+.success-hero {
+    position: relative;
+    text-align: center;
+    background:
+        radial-gradient(1200px 220px at 50% -80px,
+            rgba(228, 0, 43, 0.15),
+            transparent 70%),
+        var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: clamp(28px, 5vw, 54px) clamp(20px, 4vw, 42px);
+}
+
+.success-hero-icon {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 16px;
+    color: var(--met-red);
+}
+
+.success-hero-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.success-hero-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    font-family:
+        "Iowan Old Style", "Palatino Linotype", Palatino, Garamond, serif;
+}
+
+.success-hero-subtitle {
+    max-width: 760px;
+    margin: 14px auto 0;
+    color: var(--ink-soft);
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
+    line-height: 1.6;
+}
+
+.success-hero-note {
+    margin: 12px auto 0;
+    color: #2f2f2f;
+    font-weight: 600;
+}
+
+.alert-banner.success {
+    margin-top: 20px;
+    border: 1px solid #d5e7d8;
+    background: #edf8ef;
+    color: #256b35;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-weight: 600;
+}
+
+.success-layout {
+    margin-top: 26px;
+    display: grid;
+    gap: 22px;
+}
+
+.content-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.premium-card,
+.success-ticket {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: clamp(18px, 3vw, 28px);
+}
+
+.booking-card-title {
+    margin: 0 0 14px;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.summary-list {
+    display: grid;
+    gap: 14px;
+}
+
+.summary-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+}
+
+.summary-row {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-title-line {
+    font-size: 0.86rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7a7a7a;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.summary-subline {
+    font-size: 1.02rem;
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.summary-subline.muted,
+.helper-text {
+    color: var(--ink-soft);
+    font-weight: 500;
+}
+
+.helper-text {
+    margin: 16px 0 0;
+    font-size: 0.94rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 86px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: #fff5dd;
+    color: #8a5a00;
+}
+
+.status-badge.paid,
+.status-badge.valid {
+    background: #e7f8ec;
+    color: #176b31;
+}
+
+.status-badge.completed,
+.status-badge.used {
+    background: #e5f2ff;
+    color: #0c4f88;
+}
+
+.steps-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0 0;
+    display: grid;
+    gap: 14px;
+}
+
+.step-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.step-index {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--met-red);
+    color: #fff;
+    font-weight: 700;
+}
+
+.step-text {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.success-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.booking-card-meta {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-top: 6px;
+}
+
+.qr-box {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    border: 1px dashed #c8c8c8;
+    background: var(--paper-soft);
+    text-align: center;
+    font-family:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.qr-image-wrap {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.booking-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.booking-btn,
+.booking-btn-outline {
+    min-height: 46px;
+    padding: 0 18px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.booking-btn {
+    background: var(--met-red);
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(228, 0, 43, 0.24);
+}
+
+.booking-btn:hover {
+    background: var(--met-red-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 11px 26px rgba(228, 0, 43, 0.3);
+}
+
+.booking-btn-outline {
+    background: #fff;
+    color: #202020;
+    border: 1px solid var(--line);
+}
+
+.booking-btn-outline:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+    border-color: #d4ccc4;
+}
+
+@media (min-width: 920px) {
+    .content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .steps-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 919px) {
+    .summary-grid-two {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .booking-page {
+        padding: 16px 12px 48px;
+    }
+
+    .success-hero {
+        border-radius: 14px;
+    }
+
+    .premium-card,
+    .success-ticket {
+        border-radius: 14px;
+    }
+
+    .booking-actions {
+        justify-content: stretch;
+    }
+
+    .booking-btn,
+    .booking-btn-outline {
+        width: 100%;
+    }
+}

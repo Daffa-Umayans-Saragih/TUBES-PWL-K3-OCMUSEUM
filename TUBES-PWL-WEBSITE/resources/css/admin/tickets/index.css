@@ -1,0 +1,15 @@
+.tickets-summary {
+    margin-top: 4px;
+}
+
+.tickets-layout {
+    align-items: start;
+}
+
+.tickets-table .data-table {
+    min-width: 720px;
+}
+
+.tickets-side .admin-panel__body {
+    gap: 12px;
+}

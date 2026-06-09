@@ -1,0 +1,9 @@
+.chart-card[data-chart="payment"] {
+    border-left: 4px solid #2d6a4f;
+}
+
+.chart-card[data-chart="payment"] .chart-placeholder {
+    background: linear-gradient(180deg,
+            rgba(45, 106, 79, 0.14),
+            rgba(45, 106, 79, 0.05));
+}

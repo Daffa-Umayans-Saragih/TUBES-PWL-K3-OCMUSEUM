@@ -1,0 +1,171 @@
+/* ========== PAGE CONTAINER ========== */
+.artwork-detail-page {
+    background-color: #f8f8f8;
+    padding: 2rem 0;
+    min-height: 100vh;
+}
+
+/* ========== NAVIGATION & LINKS ========== */
+.back-link {
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #004899;
+}
+
+/* ========== CONTENT LAYOUT GRID ========== */
+.artwork-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* ========== GALLERY SECTION ========== */
+.artwork-gallery-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.artwork-gallery {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* ========== IMAGE DISPLAY ========== */
+.artwork-main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: #e0e0e0;
+    color: #999;
+    font-size: 1.1rem;
+}
+
+/* ========== DETAILS SECTION ========== */
+.artwork-details-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== HEADER ========== */
+.artwork-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1.5rem;
+}
+
+.artwork-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.artist-name {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* ========== METADATA ========== */
+.artwork-meta-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.meta-value {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ========== DESCRIPTION ========== */
+.artwork-description-section {
+    margin-bottom: 2rem;
+}
+
+.artwork-description-section h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.artwork-description-section p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* ========== ACTION BUTTONS ========== */
+.artwork-actions {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1.5rem;
+}
+
+.artwork-actions .btn {
+    flex: 1;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .artwork-detail-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artwork-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .artwork-actions {
+        flex-direction: column;
+    }
+}

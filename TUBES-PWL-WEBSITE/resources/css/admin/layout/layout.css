@@ -1,0 +1,434 @@
+/* ========== GLOBAL RESET & BODY ========== */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== ADMIN LAYOUT STRUCTURE - HORIZONTAL FLEX ========== */
+.admin-layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background-color: #fff;
+    width: 100%;
+}
+
+/* ========== ADMIN SIDEBAR ========== */
+.admin-sidebar {
+    width: 250px;
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    z-index: 1000;
+}
+
+.admin-sidebar-logo {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.admin-sidebar-logo h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #fff;
+}
+
+/* ========== ADMIN NAVIGATION ========== */
+.admin-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-nav-item {
+    margin: 0;
+}
+
+.admin-nav-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.admin-nav-link:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.admin-nav-link.active {
+    background-color: #222;
+    color: #fff;
+    border-left-color: #fff;
+}
+
+.admin-nav-section {
+    margin-top: 2rem;
+}
+
+.admin-nav-section-title {
+    padding: 0.5rem 1.5rem;
+    color: #999;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* ========== ADMIN MAIN CONTENT AREA ========== */
+.admin-main {
+    flex: 1;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+}
+
+/* ========== ADMIN TOP BAR ========== */
+.admin-topbar {
+    background-color: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.admin-topbar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.admin-topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-topbar-user-info {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.admin-topbar-user-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-topbar-user-role {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ========== LOGOUT BUTTON ========== */
+.btn-logout {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-logout:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb {
+    padding: 0.5rem 1.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+    color: #999;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-item:hover {
+    color: #333;
+}
+
+.breadcrumb-item.active {
+    color: #333;
+    font-weight: 600;
+}
+
+/* ========== ADMIN CONTENT WRAPPER ========== */
+.admin-content-wrapper {
+    flex: 1;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.admin-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
+    padding: 0.5rem;
+    line-height: 1;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-sidebar-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.admin-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.admin-sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ========== UNIVERSAL TABLE RESPONSIVENESS ========== */
+.table-responsive,
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar,
+.table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track,
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-responsive::-webkit-scrollbar-thumb,
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover,
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* ========== RESPONSIVE FORM GRID AND FIELDS ========== */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #444;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #000;
+    outline: none;
+}
+
+/* ========== RESPONSIVE DESIGN - TABLET & LAPTOP ========== */
+@media (max-width: 1024px) {
+    .btn-sidebar-toggle {
+        display: block;
+    }
+
+    .admin-sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .admin-sidebar.active {
+        left: 0;
+    }
+
+    .admin-content-wrapper {
+        padding: 1.5rem;
+    }
+}
+
+/* ========== RESPONSIVE DESIGN - MOBILE ========== */
+@media (max-width: 768px) {
+    .admin-topbar {
+        padding: 1rem;
+    }
+
+    .admin-topbar-user {
+        gap: 0.75rem;
+    }
+
+    .admin-topbar-user-info {
+        display: none;
+        /* Hide admin name/role text on small screens for maximum header space */
+    }
+
+    .admin-content-wrapper {
+        padding: 1rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ========== MOBILE SMALL (320px - 480px) ========== */
+@media (max-width: 480px) {
+    .admin-topbar h1 {
+        font-size: 1.15rem;
+    }
+
+    .admin-content-wrapper {
+        padding: 0.75rem;
+    }
+}
+
+.admin-topbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.admin-topbar form {
+    margin: 0;
+}
+
+/* ========== ARTWORK FORM GRID AND TABLES RESPONSIVE POLISH ========== */
+@media (max-width: 768px) {
+
+    /* Make inline grids in repeatable sections stack vertically on mobile */
+    .exhibition-row>div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+    }
+
+    /* Make inline form tables scrollable */
+    #measurements_table,
+    #sims_table,
+    .form-section table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .reference-row {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 0.5rem;
+    }
+
+    .reference-row button {
+        align-self: flex-end;
+    }
+}
+
+/* ========== UNIVERSAL STATS GRID RESPONSIVENESS ========== */
+.quick-stats-grid,
+.stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+}
+
+@media (max-width: 580px) {
+
+    .quick-stats-grid,
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

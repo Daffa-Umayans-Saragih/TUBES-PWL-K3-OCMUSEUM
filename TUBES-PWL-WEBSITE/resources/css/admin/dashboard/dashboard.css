@@ -1,0 +1,153 @@
+/* ========== CONTAINER & LAYOUT ========== */
+.admin-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ========== DASHBOARD GRID ========== */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* ========== STAT CARDS ========== */
+.stat-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 1.75rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-color: #000;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========== ADMIN ACTIONS ========== */
+.admin-actions {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.admin-actions h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ========== PRIMARY BUTTON ========== */
+.btn-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background-color: #222;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== RECENT ARTWORKS SECTION ========== */
+.recent-artworks {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.recent-artworks h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* ========== ARTWORKS TABLE ========== */
+.artworks-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.artworks-table th {
+    background-color: #fafafa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.artworks-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.artworks-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.artwork-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.artwork-link:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .admin-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}

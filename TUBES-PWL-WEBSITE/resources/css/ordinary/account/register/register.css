@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/* =========================
+   GLOBAL LAYOUT
+========================= */
+.auth-container {
+    max-width: 720px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.auth-card {
+    background: #fff;
+}
+
+/* =========================
+   TITLE
+========================= */
+.auth-card h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.auth-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+/* =========================
+   CHECK ACCOUNT BOX
+========================= */
+.check-account-box {
+    background: #f3e8eb;
+    border: 1px solid #e5cfd5;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.check-account-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-check-account {
+    display: inline-block;
+    background: #e11d2a;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* =========================
+   AUTO SECTION TITLE (CSS ONLY HACK)
+========================= */
+
+/* Account Info */
+.form-group:nth-of-type(1)::before {
+    content: "Account Info";
+    display: block;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* Personal Info */
+.form-group:nth-of-type(4)::before {
+    content: "Personal Info";
+    display: block;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+/* Contact Info */
+.form-group:nth-of-type(7)::before {
+    content: "Contact Info";
+    display: block;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* INPUT */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    font-size: 14px;
+}
+
+/* =========================
+   GRID HACK (NO BLADE CHANGE)
+========================= */
+
+/* State + Postal Code jadi 2 kolom */
+.form-group:nth-last-of-type(2),
+.form-group:nth-last-of-type(1) {
+    width: 48%;
+    display: inline-block;
+}
+
+.form-group:nth-last-of-type(2) {
+    margin-right: 4%;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-primary {
+    background: #e11d2a;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* =========================
+   TEXT
+========================= */
+.auth-links {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* =========================
+   ERROR
+========================= */
+.field-error-message {
+    color: red;
+    font-size: 12px;
+}

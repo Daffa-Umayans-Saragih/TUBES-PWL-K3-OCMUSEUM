@@ -1,0 +1,11 @@
+.orders-summary {
+    margin-top: 4px;
+}
+
+.orders-layout {
+    align-items: start;
+}
+
+.orders-side .admin-panel__body {
+    gap: 12px;
+}

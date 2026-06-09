@@ -1,0 +1,11 @@
+.reports-summary {
+    margin-top: 4px;
+}
+
+.reports-cards .admin-panel {
+    min-height: 220px;
+}
+
+.reports-layout {
+    align-items: start;
+}

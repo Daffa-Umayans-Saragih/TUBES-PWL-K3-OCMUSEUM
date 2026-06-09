@@ -1,0 +1,9 @@
+.chart-card[data-chart="revenue"] {
+    border-left: 4px solid #a47148;
+}
+
+.chart-card[data-chart="revenue"] .chart-placeholder {
+    background: linear-gradient(180deg,
+            rgba(164, 113, 72, 0.12),
+            rgba(164, 113, 72, 0.04));
+}

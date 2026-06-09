@@ -1,0 +1,31 @@
+.admin-dashboard {
+    padding-bottom: 16px;
+}
+
+.admin-dashboard__filters {
+    width: 100%;
+}
+
+.admin-dashboard__summary {
+    margin-top: 4px;
+}
+
+.admin-dashboard__main {
+    align-items: start;
+}
+
+.admin-dashboard__charts {
+    align-content: start;
+}
+
+.admin-dashboard__side .admin-panel__body {
+    gap: 10px;
+}
+
+.admin-dashboard__overview .admin-panel__body {
+    gap: 12px;
+}
+
+.admin-dashboard__table .admin-panel {
+    width: 100%;
+}

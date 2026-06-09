@@ -1,0 +1,519 @@
+/* resources/css/ordinary/order/show/show.css */
+:root {
+    --primary-color: #e31837;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    --bg-light: #f7f7f7;
+    --border-color: #eaeaea;
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+.order-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+}
+
+.alert-success,
+.alert-error {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    color: #155724;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+    color: #721c24;
+}
+
+/* Header */
+.order-header {
+    margin-bottom: 30px;
+}
+
+.order-header h1 {
+    margin: 0 0 10px 0;
+    color: var(--text-dark);
+    font-size: 28px;
+}
+
+.order-header p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+/* List Mode */
+.order-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.order-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    padding: 15px 20px;
+    background: #fafafa;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-id {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.order-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.order-status.paid,
+.order-status.valid {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.order-status.pending {
+    background: #fef7e0;
+    color: #f29900;
+}
+
+.order-status.completed,
+.order-status.used {
+    background: #e1f5fe;
+    color: #01579b;
+}
+
+.order-status.failed {
+    background: #fce8e6;
+    color: #d93025;
+}
+
+.status-badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.status-badge.paid,
+.status-badge.valid {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.status-badge.pending {
+    background: #fef7e0;
+    color: #f29900;
+}
+
+.status-badge.completed,
+.status-badge.used {
+    background: #e1f5fe;
+    color: #01579b;
+}
+
+.status-badge.failed {
+    background: #fce8e6;
+    color: #d93025;
+}
+
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.card-row:last-child {
+    margin-bottom: 0;
+}
+
+.card-row .label {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.card-row .value {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.card-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 14px;
+    background: #fff;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.empty-state p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Detail Mode */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.summary-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.summary-card h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.summary-row .label {
+    color: var(--text-muted);
+}
+
+.summary-row .value {
+    font-weight: 500;
+}
+
+.summary-row.total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn-pay {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--text-dark);
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-pay:hover {
+    background-color: #000;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--text-dark);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.detail-main h3 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+}
+
+.membership-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 28px rgba(28, 18, 12, 0.06);
+}
+
+.membership-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.membership-eyebrow {
+    margin: 0 0 6px;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.membership-card h3 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text-dark);
+}
+
+.membership-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.membership-badge.pending,
+.membership-badge.gift {
+    background: #fef7e0;
+    color: #9a6700;
+}
+
+.membership-badge.active {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.membership-badge.expired,
+.membership-badge.cancelled {
+    background: #fce8e6;
+    color: #d93025;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.membership-field {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.membership-field--full {
+    grid-column: 1 / -1;
+}
+
+.membership-field .label {
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+.membership-field .value {
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.helper-text {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.membership-notice {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: #fff8ef;
+    border: 1px solid #f0d8b5;
+    color: #7a4e00;
+}
+
+.membership-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    background: #fff;
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-primary--membership {
+    background: var(--primary-color);
+}
+
+.btn-secondary--membership {
+    background: #fff;
+}
+
+@media (max-width: 768px) {
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-card__header {
+        flex-direction: column;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ticket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ticket-card {
+    display: flex;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.ticket-info p {
+    margin: 0 0 5px 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.ticket-info .status {
+    margin-top: 10px;
+    color: var(--text-dark);
+}
+
+.ticket-qr {
+    text-align: center;
+}
+
+.qr-placeholder {
+    width: auto;
+    height: auto;
+    min-width: 150px;
+    min-height: 150px;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 10px;
+    color: #999;
+    border: 1px dashed #ccc;
+    margin-bottom: 5px;
+    word-break: break-all;
+    padding: 10px;
+}
+
+.empty-tickets {
+    background: #fff;
+    border: 1px dashed #ccc;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    color: var(--text-muted);
+}

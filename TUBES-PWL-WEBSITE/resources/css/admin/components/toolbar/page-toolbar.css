@@ -1,0 +1,110 @@
+.admin-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+    box-shadow: var(--admin-shadow-sm);
+    outline: none;
+}
+
+.admin-toolbar__main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-toolbar__title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.admin-toolbar__titles h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.admin-toolbar__subtitle {
+    margin: 0;
+    color: var(--admin-ink-muted);
+}
+
+.admin-toolbar__badges,
+.admin-toolbar__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.admin-toolbar__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@media (min-width: 960px) {
+    .admin-toolbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .admin-toolbar__main {
+        flex: 1;
+    }
+
+    .admin-toolbar__actions {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 720px) {
+    .admin-toolbar {
+        padding: 12px 6vw 12px 4vw;
+        gap: 10px;
+    }
+
+    .admin-toolbar__main {
+        gap: 6px;
+    }
+
+    .admin-toolbar__title-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .admin-toolbar__actions {
+        gap: 8px;
+        margin-top: 8px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .admin-toolbar__badges,
+    .admin-toolbar__filters {
+        gap: 6px;
+    }
+}
+
+.admin-toolbar__actions button:focus-visible,
+.admin-toolbar__filters .admin-pill:focus-visible,
+.admin-toolbar__badges .badge:focus-visible,
+.status-chip:focus-visible {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+    background: rgba(52, 152, 219, 0.08);
+    color: #222;
+    z-index: 1;
+}
+
+@media (max-width: 720px) {
+    .admin-toolbar {
+        padding: 14px;
+    }
+}
